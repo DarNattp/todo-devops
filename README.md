@@ -1,10 +1,26 @@
 
-# Welcome to Todo Application
+# Todo Application on Kubernetes Cluster
 
-A brief description of what this project does and who it's for
+    This is my simple application and also I made it "over engineering"
 
 
-## Screenshots
+## System Diagram
 
 ![System_Diagram](https://github.com/DarNattp/todo-devops/blob/master/images/System_Diagram.png?raw=true)
 
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+```zsh
+  npm run test
+```
