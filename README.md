@@ -1,7 +1,7 @@
 
 # Todo Application on Kubernetes Cluster
 
-    This is my simple application and also I made it "over engineering"
+  This is my simple application and also I made it "over engineering"
 
 
 ## System Diagram
@@ -19,7 +19,7 @@
 To run tests, run the following command
 
 ```bash
-  npm run test
+npm run test
 ```
 ```zsh
   npm run test
