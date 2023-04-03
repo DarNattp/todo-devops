@@ -214,7 +214,7 @@ node {
 }
 ```
 
-### [Backend] 1st job - build/push image and then trigger next job 
+#### [Backend] 1st job - build/push image and then trigger next job 
 ```
 node {
     def app
@@ -246,7 +246,7 @@ node {
 ```
 
 
-### [Backend] 2nd job - update tag on git deployment manifest file
+#### [Backend] 2nd job - update tag on git deployment manifest file
 ```
 node {
     def app
