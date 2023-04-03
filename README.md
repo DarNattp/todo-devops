@@ -120,7 +120,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: backend-depl
-        image: darnattp/basic-k8s-todo-server:3
+        image: darnattp/basic-k8s-todo-server:latest
         resources:
           limits:
             memory: "32Mi"
