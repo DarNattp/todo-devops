@@ -151,6 +151,8 @@ spec:
 
 ![System_Diagram](https://github.com/DarNattp/todo-devops/blob/master/images/CICD.png?raw=true)
 
+![jenkins1](https://github.com/DarNattp/todo-devops/blob/master/images/jenkins1.png?raw=true)
+
 ### Jenkinsfile 
 #### [Frontend] 1st job - build/push image and then trigger next job 
 
