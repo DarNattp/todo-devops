@@ -357,7 +357,7 @@ replicaset.apps/kibana-kb-67b4bcb8bb   1         1         1       32h
 NAME                                        READY   AGE
 statefulset.apps/elasticsearch-es-default   2/2     2d21h
 ```
-## Metrics monitoring stack with Grafana and Prometheus'
+## Metrics monitoring stack with Grafana and Prometheus
 
 ![node1](https://github.com/DarNattp/todo-devops/blob/master/images/node1.png?raw=true)
 
