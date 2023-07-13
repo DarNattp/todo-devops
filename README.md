@@ -413,7 +413,3 @@ I use `Traefik` in my Kubernetes Cluster because it allows me to utilize the `Le
 - --certificatesresolvers.cloudflare.acme.storage=/ssl-certs/acme-cloudflare.json
 - --providers.kubernetesingress.ingressendpoint.ip=X.X.X.X
 ```
-## Horizontal Pod Autoscaling (HPA) 
-
-- Using CPU as metrics --> **in progress**
-- Using Custom metrics with `Prometheus Adapter` --> **in progress**
