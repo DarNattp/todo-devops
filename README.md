@@ -1,7 +1,7 @@
 
 # Todo Application on Kubernetes Cluster
 
-This is my simple application, and I've intentionally implemented it with `over-engineering` in order to have hands-on experience with various technologies.
+This is my simple application, and I've intentionally implemented it with `over-engineering` in order to have hands-on experience with various technologies..
 
 What is `over-engineering` in my opinion?
 
