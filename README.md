@@ -3,7 +3,7 @@
 
 This is my simple application, and I've intentionally implemented it with `over-engineering` in order to have hands-on experience with various technologies..
 
-What is `over-engineering` in my opinion??
+What is `over-engineering` in my opinion?
 
 - A simple application split into microservices for the `frontend`, `backend`, and `database`.
 - The application is deployed in a `Kubernetes Cluster` on the `Google Cloud Platform`.
