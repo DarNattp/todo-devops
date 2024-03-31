@@ -1,3 +1,8 @@
+---
+runme:
+  id: 01HTAWBW8DPAE7NYZ00ZMNST9Y
+  version: v3
+---
 
 # Todo Application on Kubernetes Cluster
 
@@ -9,17 +14,18 @@ What is `over-engineering` in my opinion?
 - The application is deployed in a `Kubernetes Cluster` on the `Google Cloud Platform`.
 - Provisioning of the GKE Cluster and other GCP services using `Terraform`.
 - Deployment of metrics monitoring with `Grafana` and `Prometheus`.
-- Deployment of logging monitoring using `Elasticsearch`, `Filebeat`, and `Kibana`.
+- Deployment of logging monitoring with `ECK (Elastic Cloud Kubernetes)` using `Elasticsearch`, `Filebeat`, and `Kibana`.
+
 ## Source Code
 
 - [Terraform](https://github.com/DarNattp/gke-tf.git)
 - [K8s manifest](https://github.com/DarNattp/todo-k8s-prod.git)
 - [Backend with Go](https://github.com/DarNattp/todo-server.git)
 - [Frontend with ReactJS](https://github.com/DarNattp/todo-client.git)
+
 ## Architecture Diagram
 
 ![System_Diagram](https://github.com/DarNattp/todo-devops/blob/master/images/System_Diagram.png?raw=true)
-
 
 ## Todo Application
 
@@ -35,8 +41,7 @@ What is `over-engineering` in my opinion?
 
 ![web-todo](https://github.com/DarNattp/todo-devops/blob/master/images/todo-app1.png?raw=true)
 
-
-```
+```sh {"id":"01HTAWBW8DPAE7NYZ007YMSD9A"}
 NAME                                 READY   STATUS    RESTARTS   AGE
 pod/backend-depl-7968dcff7d-r46h6    1/1     Running   0          20h
 pod/frontend-depl-855c766b86-ss4s2   1/1     Running   0          20h
@@ -59,7 +64,8 @@ replicaset.apps/maria-db-depl-8585d678c8   1         1         1       20h
 ```
 
 ### frontend-deployment.yml
-```
+
+```yaml {"id":"01HTAWBW8DPAE7NYZ009S0CP0V"}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -102,7 +108,8 @@ spec:
 ```
 
 ### backend-deployment.yml
-```
+
+```yaml {"id":"01HTAWBW8DPAE7NYZ00CAGPH74"}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -147,16 +154,18 @@ spec:
                 values:
                 - arm64-pool    
 ```
+
 ## CI/CD Flow
 
 ![System_Diagram](https://github.com/DarNattp/todo-devops/blob/master/images/CICD.png?raw=true)
 
 ![jenkins1](https://github.com/DarNattp/todo-devops/blob/master/images/jenkins1.png?raw=true)
 
-### Jenkinsfile 
-#### [Frontend] 1st job - build/push image and then trigger next job 
+### Jenkinsfile
 
-```
+#### [Frontend] 1st job - build/push image and then trigger next job
+
+```groovy {"id":"01HTAWBW8DPAE7NYZ00FY7MTZM"}
 node {
     def app
     stage('Clone repository') {
@@ -187,7 +196,8 @@ node {
 ```
 
 #### [Frontend] 2nd job - update tag on git deployment manifest file
-```
+
+```groovy {"id":"01HTAWBW8DPAE7NYZ00JH97CM5"}
 node {
     def app
 
@@ -216,8 +226,9 @@ node {
 }
 ```
 
-#### [Backend] 1st job - build/push image and then trigger next job 
-```
+#### [Backend] 1st job - build/push image and then trigger next job
+
+```groovy {"id":"01HTAWBW8DPAE7NYZ00KXNZT57"}
 node {
     def app
     stage('Clone repository') {
@@ -247,9 +258,9 @@ node {
 }
 ```
 
-
 #### [Backend] 2nd job - update tag on git deployment manifest file
-```
+
+```groovy {"id":"01HTAWBW8DPAE7NYZ00N6NQC35"}
 node {
     def app
 
@@ -277,15 +288,17 @@ node {
 }
 }
 ```
+
 ## ArgoCD
 
 Install by `kubectl`
 
-```
+```sh {"id":"01HTAWBW8DPAE7NYZ00S6GP153"}
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
-```
+
+```sh {"id":"01HTAWBW8DPAE7NYZ00TG7HJ8W"}
 NAME                                                   READY   STATUS    RESTARTS   AGE
 pod/argocd-application-controller-0                    1/1     Running   0          34h
 pod/argocd-applicationset-controller-6ccb885cc-fkhjx   1/1     Running   0          34h
@@ -325,12 +338,14 @@ replicaset.apps/argocd-server-6dfb99877b                     1         1        
 NAME                                             READY   AGE
 statefulset.apps/argocd-application-controller   1/1     7d
 ```
+
 ![argocd1](https://github.com/DarNattp/todo-devops/blob/master/images/argocd1.png?raw=true)
+
 ## Logging stack with Elasticsearch, Filebeat and Kibana
 
 ![elastic1](https://github.com/DarNattp/todo-devops/blob/master/images/elastic1.png?raw=true)
 
-```
+```sh {"id":"01HTAWBW8DPAE7NYZ00TW1GA12"}
 NAME                             READY   STATUS    RESTARTS      AGE
 pod/elasticsearch-es-default-0   1/1     Running   0             33h
 pod/elasticsearch-es-default-1   1/1     Running   0             33h
@@ -357,13 +372,14 @@ replicaset.apps/kibana-kb-67b4bcb8bb   1         1         1       32h
 NAME                                        READY   AGE
 statefulset.apps/elasticsearch-es-default   2/2     2d21h
 ```
+
 ## Metrics monitoring stack with Grafana and Prometheus
 
 ![node1](https://github.com/DarNattp/todo-devops/blob/master/images/node1.png?raw=true)
 
 ![pod1](https://github.com/DarNattp/todo-devops/blob/master/images/pod1.png?raw=true)
 
-```
+```sh {"id":"01HTAWBW8DPAE7NYZ00XN5S4W8"}
 NAME                                                    READY   STATUS    RESTARTS   AGE
 pod/grafana-576bdb85c-vk52m                             1/1     Running   0          33h
 pod/prometheus-alertmanager-0                           1/1     Running   0          33h
@@ -400,11 +416,12 @@ replicaset.apps/prometheus-server-5fcdf7c6f8                  1         1       
 NAME                                       READY   AGE
 statefulset.apps/prometheus-alertmanager   1/1     5d20h
 ```
+
 ## Ingress Controller with Traefik
 
 I use `Traefik` in my Kubernetes Cluster because it allows me to utilize the `Let's Encrypt` plugin for the DNS01 challenge without the need for `cert-manager`.
 
-```
+```ini {"id":"01HTAWBW8DPAE7NYZ00XQV1565"}
 - --entrypoints.websecure.http.tls=true
 - --entrypoints.websecure.http.tls.certResolver=cloudflare
 - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
