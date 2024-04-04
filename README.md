@@ -1,3 +1,9 @@
+---
+runme:
+  id: 01HTN25YBW4D302YAGW76521BJ
+  version: v3
+---
+
 # Todo Application on Kubernetes Cluster
 
 This is my simple application, and I've intentionally implemented it with `over-engineering` in order to have hands-on experience with various technologies..
@@ -9,6 +15,7 @@ What is `over-engineering` in my opinion?
 - Provisioning of the GKE Cluster and other GCP services using `Terraform`.
 - Deployment of metrics monitoring with `Grafana` and `Prometheus`.
 - Deployment of logging monitoring with `ECK (Elastic Cloud Kubernetes)` using `Elasticsearch`, `Filebeat`, and `Kibana`.
+- Automate build and deploy with `Jenkins` and `ArgoCD`
 
 ## Source Code
 
