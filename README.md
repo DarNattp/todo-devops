@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HTN25YBW4D302YAGW76521BJ
-  version: v3
----
-
 # Todo Application on Kubernetes Cluster
 
 This is my simple application, and I've intentionally implemented it with `over-engineering` in order to have hands-on experience with various technologies..
