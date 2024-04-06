@@ -14,7 +14,7 @@ What is `over-engineering` in my opinion?
 ## Source Code
 
 - [Terraform](https://github.com/DarNattp/gke-tf.git)
-- [K8s manifest](https://github.com/DarNattp/todo-k8s-prod.git)
+- [GitOps K8s manifest](https://github.com/DarNattp/todo-k8s-prod.git)
 - [Backend with Go](https://github.com/DarNattp/todo-server.git)
 - [Frontend with ReactJS](https://github.com/DarNattp/todo-client.git)
 
